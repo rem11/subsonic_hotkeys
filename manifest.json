@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "Subsonic Hotkeys",
+  "description": "Allows to assign global hotkeys for subsonic (e.g. play, pause etc...)",
+  "version": "1.0",
+  "permissions": [
+          "<all_urls>"
+        ],
+  "commands": {
+    "play_pause": {
+	  "suggested_key": {
+		"default": "Ctrl+Shift+7"
+	  },
+	  "description": "Play/Pause",
+	  "global": true
+	},
+    "next_track": {
+	  "suggested_key": {
+		"default": "Ctrl+Shift+8"
+	  },
+	  "description": "Next track",
+	  "global": true
+	},	
+    "prev_track": {
+	  "suggested_key": {
+		"default": "Ctrl+Shift+6"
+	  },
+	  "description": "Previous track",
+	  "global": true
+	}	
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"]
+    }
+  ]
+}
