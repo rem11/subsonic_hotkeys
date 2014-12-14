@@ -11,9 +11,9 @@ chrome.runtime.onMessage.addListener(
         if (!_window) return;
         if (request.command == "play_pause") {
             inject(_window, "window.jwplayer().play()");
-        } else if (request.command = "next_track") {
+        } else if (request.command == "next_track") {
             inject(_window, "window.onNext()");
-        } else if (request.command = "previous_track") {
+        } else if (request.command == "prev_track") {
             inject(_window, "window.onPrevious()");
         }
     }
